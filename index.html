@@ -95,7 +95,7 @@
       
         <p>ps:本文依赖于Flink1.13</p>
 <p>1.Flink 由于扩大并行度导致启动失败，扩大下列参数</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">akka.ask.timeout=5min</span><br><span class="line">taskmanager.slot.timeout=5min</span><br><span class="line">timeout=5min</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">akka.ask.timeout=5min</span><br><span class="line">taskmanager.slot.timeout=5min</span><br><span class="line">client.timeout=5min</span><br></pre></td></tr></table></figure>
 <p>2.Flink 由于扩大并行度导致jobmanager与taskmanager连接超时，个别模块启动失败</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">akka.tcp.timeout=5min</span><br></pre></td></tr></table></figure>
 
