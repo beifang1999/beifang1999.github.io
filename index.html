@@ -71,6 +71,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Flink常见错误" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-11-29T02:24:18.000Z" itemprop="datePublished">2022-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">Flink常见错误</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>ps:本文依赖于Flink1.13</p>
+<p>1.Flink 由于扩大并行度导致启动失败，扩大下列参数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">akka.ask.timeout=5min</span><br><span class="line">taskmanager.slot.timeout=5min</span><br><span class="line">timeout=5min</span><br></pre></td></tr></table></figure>
+<p>2.Flink 由于扩大并行度导致jobmanager与taskmanager连接超时，个别模块启动失败</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">akka.tcp.timeout=5min</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" data-id="clb1m3vq9000064vc20tz4v4p" data-title="Flink常见错误" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/11/25/hello-world/" class="article-date">
@@ -141,6 +184,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">Flink常见错误</a>
+          </li>
         
           <li>
             <a href="/2022/11/25/hello-world/">hello_world</a>

@@ -4,21 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>hello_world | Hexo</title>
+  <title>Flink常见错误 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#This is My First Code作为镇站之宝  12345public class HelloWorld&amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(&quot;hello world&quot;);    &amp;#125;&amp;#125;">
+  <meta name="description" content="ps:本文依赖于Flink1.13 1.Flink 由于扩大并行度导致启动失败，扩大下列参数 123akka.ask.timeout&#x3D;5mintaskmanager.slot.timeout&#x3D;5mintimeout&#x3D;5min 2.Flink 由于扩大并行度导致jobmanager与taskmanager连接超时，个别模块启动失败 1akka.tcp.timeout&#x3D;5min">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello_world">
-<meta property="og:url" content="http://example.com/2022/11/25/hello-world/index.html">
+<meta property="og:title" content="Flink常见错误">
+<meta property="og:url" content="http://example.com/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#This is My First Code作为镇站之宝  12345public class HelloWorld&amp;#123;    public static void main(String[] args) &amp;#123;        System.out.println(&quot;hello world&quot;);    &amp;#125;&amp;#125;">
+<meta property="og:description" content="ps:本文依赖于Flink1.13 1.Flink 由于扩大并行度导致启动失败，扩大下列参数 123akka.ask.timeout&#x3D;5mintaskmanager.slot.timeout&#x3D;5mintimeout&#x3D;5min 2.Flink 由于扩大并行度导致jobmanager与taskmanager连接超时，个别模块启动失败 1akka.tcp.timeout&#x3D;5min">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/11/25/hello-world/img.png">
-<meta property="article:published_time" content="2022-11-25T09:14:56.000Z">
-<meta property="article:modified_time" content="2022-11-25T09:57:02.449Z">
+<meta property="article:published_time" content="2022-11-29T02:24:18.000Z">
+<meta property="article:modified_time" content="2022-11-29T02:39:29.067Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/11/25/hello-world/img.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -75,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Flink常见错误" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/11/25/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-11-25T09:14:56.000Z" itemprop="datePublished">2022-11-25</time>
+    <a href="/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-11-29T02:24:18.000Z" itemprop="datePublished">2022-11-29</time>
 </a>
     
   </div>
@@ -89,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      hello_world
+      Flink常见错误
     </h1>
   
 
@@ -97,14 +95,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#This is My First Code<br>作为镇站之宝</p>
-<p><img src="/2022/11/25/hello-world/img.png" alt="镇站之宝"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>ps:本文依赖于Flink1.13</p>
+<p>1.Flink 由于扩大并行度导致启动失败，扩大下列参数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">akka.ask.timeout=5min</span><br><span class="line">taskmanager.slot.timeout=5min</span><br><span class="line">timeout=5min</span><br></pre></td></tr></table></figure>
+<p>2.Flink 由于扩大并行度导致jobmanager与taskmanager连接超时，个别模块启动失败</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">akka.tcp.timeout=5min</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/25/hello-world/" data-id="clawbxqhl0000psvc5axxbekd" data-title="hello_world" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" data-id="clb1m3vq9000064vc20tz4v4p" data-title="Flink常见错误" class="article-share-link">Share</a>
       
       
       
@@ -114,15 +114,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/11/29/Flink%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Flink常见错误
-        
-      </div>
-    </a>
   
+    <a href="/2022/11/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hello_world</div>
+    </a>
   
 </nav>
 
